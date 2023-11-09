@@ -1,5 +1,5 @@
 resource null_resource "cli-test" {
     provisioner "local-exec" {
-    command = "python3 -V"
+    command = "pip3 -V"
     }
 }
