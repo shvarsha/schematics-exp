@@ -1,7 +1,12 @@
-resource null_resource "cli-test" {
+resource null_resource "prov-test" {
     provisioner "local-exec" {
-    ##command = "pip3 install ibmcloudant==0.0.40"
-    ##command = "helm3 --help"
-    command = "go version"
+    command = "echo 'provision-time provisioner'"
     }
+
+    provisioner "local-exec" {
+    when = destroy
+    command = "echo 'Destroy-time provisioner'"
+    }
+
+
 }
