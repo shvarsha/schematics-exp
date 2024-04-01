@@ -1,12 +1,8 @@
-resource null_resource "prov-test" {
-    provisioner "local-exec" {
-    command = "echo 'provision-time provisioner'"
-    }
+data "ibm_cm_catalog" "cm_catalog" {
+}
 
-    provisioner "local-exec" {
-    when = destroy
-    command = "echo 'Destroy-time provisioner'"
-    }
-
-
+resource "ibm_cm_catalog" "cm_catalog" {
+  label = "test-vpe-catalog"
+  kind  = "vpe"
+  tags  = ["sdnlb"]
 }
