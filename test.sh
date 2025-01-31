@@ -1,4 +1,8 @@
 #!/bin/sh
 
-input_var=${1}
-echo $input_var
+echo "inside script"
+helm3 help
+helm3 version
+helm3 install help
+helm help
+helm version
