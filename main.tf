@@ -1,7 +1,7 @@
 resource null_resource "prov-test" {
     provisioner "local-exec" {
     command = <<EOF
-    bash test.sh ${var.input}
+    bash test.sh ${var.input_var}
     EOF
     }
 }
