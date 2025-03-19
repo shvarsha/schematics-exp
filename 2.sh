@@ -10,8 +10,8 @@ HELM_CHART_NAME=helm_values.yaml
 cat <<EOF > $HELM_CHART_NAME
 cron:
   provision:
-    monitor_hours: "2"
-    image_name_list: "${IMAGE_NAME_LIST}"
+    monitor_hours: $random
+    image_name_list: "${image_list}"
 EOF
 
 cat helm_values.yaml
